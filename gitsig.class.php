@@ -4,7 +4,7 @@ class Github_signature {
 	var $username;
 	var $image       = 'res/sigtemp.png';				//template image
 	var $font        = 'res/HelveticaLTStd-Bold.otf';	//font file
-	var $uri_segment = 3;								//This depends on how many sub-folders the script is in
+	var $uri_segment = 4;								//This depends on how many sub-folders the script is in
 	
 	function get_username()
 	{
@@ -30,7 +30,7 @@ class Github_signature {
 	{
 		$json = $this->load_json();
 		
-		if(array_key_exists($json,'private_repos'))
+		if(array_key_exists('private_repos',$json))
 		{
 			return $json['private_repos'];
 		}
